@@ -1,11 +1,20 @@
 import React from 'react'
 
+// Styled Component
+import styled from 'styled-components'
+
 function Section() {
   return (
-    <div>
+    <Wrap>
       Section
-    </div>
+    </Wrap>
   )
 }
 
 export default Section
+
+const Wrap = styled.div`
+ width : 100vw;
+ height : 100vh;
+ background: orange;
+`
