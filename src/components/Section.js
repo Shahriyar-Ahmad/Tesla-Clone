@@ -3,18 +3,21 @@ import React from 'react'
 // Styled Component
 import styled from 'styled-components'
 
-function Section() {
+function Section({title , discrption, leftBtnText,rightBtnText, backgroundImg}) {
   return (
-    <Wrap>
+    <Wrap bgImage={backgroundImg}>
       <ItemText>
-        <h1>Model S</h1>
-        <p>Order Online for Touchless Delivery.</p>
+        <h1>{title}</h1>
+        <p>{discrption}</p>
         {/* <b>G g h</b> */}
       </ItemText>
       <Buttons>
         <ButtonGroup>
-          <LeftButton>Custom Order</LeftButton>
-          <RightButton>Existing Inventory</RightButton>
+          <LeftButton>{leftBtnText}</LeftButton>
+          {
+            rightBtnText &&  <RightButton>{rightBtnText}</RightButton>
+          }
+         
         </ButtonGroup>
         <DownArrow src='/images/down-arrow.svg' />
       </Buttons>
@@ -30,17 +33,17 @@ const Wrap = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('/images/model-s.jpg');
-    display: flex;
+    background-image: url('/images/model-s.jpg');    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center; // orizantal
+     background-image: 
+     ${props=> `url('/images/${props.bgImage}')`};
 
 `
 const ItemText = styled.div`
     padding-top: 15vh;
     text-align: center;
-    color: black;
 `
 const Buttons = styled.div`
      
@@ -77,7 +80,7 @@ const DownArrow = styled.img`
    margin-top: 20px;
    height : 40px;
    justify-content: center;
-   margin: auto;
+   margin-left: 100px;
    text-align: center;
    overflow-x: hidden;
    animation: animateDown infinite 1.5s;
