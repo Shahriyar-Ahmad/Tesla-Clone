@@ -9,7 +9,7 @@ function Section({title , discrption, leftBtnText,rightBtnText, backgroundImg}) 
       <ItemText>
         <h1>{title}</h1>
         <p>{discrption}</p>
-        {/* <b>G g h</b> */}
+        {/* <b>G g h '</b> */}
       </ItemText>
       <Buttons>
         <ButtonGroup>
