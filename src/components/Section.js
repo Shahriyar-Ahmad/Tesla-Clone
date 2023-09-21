@@ -3,10 +3,13 @@ import React from 'react'
 // Styled Component
 import styled from 'styled-components'
 
+// Animation imports
+// import Fade from 'react-reveal/Fade';
+
 function Section({title , discrption, leftBtnText,rightBtnText, backgroundImg}) {
   return (
-    <Wrap bgImage={backgroundImg}>
-      <ItemText>
+    <Wrap bgImage={backgroundImg}> 
+    <ItemText>
         <h1>{title}</h1>
         <p>{discrption}</p>
       </ItemText>
@@ -36,7 +39,7 @@ const Wrap = styled.div`
     flex-direction: column;
     justify-content: space-between;
     align-items: center; // orizantal
-     background-image: 
+    background-image: 
      ${props=> `url('/images/${props.bgImage}')`};
 
 `
