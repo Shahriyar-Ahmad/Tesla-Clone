@@ -6,10 +6,10 @@ import styled from 'styled-components'
 // Animation imports
 // import Fade from 'react-reveal/Fade';
 
-function Section({title , discrption, leftBtnText,rightBtnText, backgroundImg}) {
+function Section({ title, discrption, leftBtnText, rightBtnText, backgroundImg }) {
   return (
-    <Wrap bgImage={backgroundImg}> 
-    <ItemText>
+    <Wrap bgImage={backgroundImg}>
+      <ItemText>
         <h1>{title}</h1>
         <p>{discrption}</p>
       </ItemText>
@@ -17,9 +17,8 @@ function Section({title , discrption, leftBtnText,rightBtnText, backgroundImg}) 
         <ButtonGroup>
           <LeftButton>{leftBtnText}</LeftButton>
           {
-            rightBtnText &&  <RightButton>{rightBtnText}</RightButton>
+            rightBtnText && <RightButton>{rightBtnText}</RightButton>
           }
-         
         </ButtonGroup>
         <DownArrow src='/images/down-arrow.svg' />
       </Buttons>
@@ -28,6 +27,8 @@ function Section({title , discrption, leftBtnText,rightBtnText, backgroundImg}) 
 }
 
 export default Section
+
+// Styled components css
 
 const Wrap = styled.div`
     width : 100vw;
@@ -40,7 +41,7 @@ const Wrap = styled.div`
     justify-content: space-between;
     align-items: center; // orizantal
     background-image: 
-     ${props=> `url('/images/${props.bgImage}')`};
+     ${props => `url('/images/${props.bgImage}')`};
 
 `
 const ItemText = styled.div`
@@ -48,7 +49,8 @@ const ItemText = styled.div`
     text-align: center;
 `
 const Buttons = styled.div`
-     
+    justify-items: center;
+    text-align: center;
 `
 const ButtonGroup = styled.div`
    display: flex;
@@ -81,9 +83,6 @@ const RightButton = styled(LeftButton)`
 const DownArrow = styled.img`
    margin-top: 20px;
    height : 40px;
-   justify-content: center;
-   margin-left: 100px;
-   text-align: center;
    overflow-x: hidden;
    animation: animateDown infinite 1.5s;
 `
