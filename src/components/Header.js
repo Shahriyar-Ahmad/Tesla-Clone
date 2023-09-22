@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-// styled imports
+// styled components imports
 import styled from 'styled-components'
 
 // Icons imports
@@ -16,7 +16,6 @@ function Header() {
    const cars = useSelector(selectCars)
    return (
       <Container>
-         {/* <b>G g h '</b> */}
          <a>
             <img src='/images/logo.svg' alt='logo' />
          </a>
