@@ -1,6 +1,4 @@
-import React from 'react'
-
-
+import React from 'react';
 // Components
 import Section from '../components/Section';
 
@@ -65,6 +63,8 @@ function Home() {
 }
 
 export default Home
+
+// styled component css
 
 const Container = styled.div`
 height :100vh;

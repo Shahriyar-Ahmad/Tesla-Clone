@@ -7,8 +7,13 @@ import styled from 'styled-components'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
+// Redux import
+import { selectCars } from '../app/features/car/CarSlice';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+
 function Header() {
    const [burgerstatus, setBurgerStatus] = useState(false);
+   const cars = useSelector(selectCars)
    return (
       <Container>
          {/* <b>G g h '</b> */}
@@ -16,10 +21,11 @@ function Header() {
             <img src='/images/logo.svg' alt='logo' />
          </a>
          <Menu>
-            <a href='#'>Model S</a>
-            <a href='#'>Model 3</a>
-            <a href='#'>Model X</a>
-            <a href='#'>Model Y</a>
+            {
+               cars && cars.map((car, index) => (
+                  <a href='#' key={index}>{car}</a>
+               ))
+            }
          </Menu>
          <SideMenu>
             <a href='#'>Shop</a>
@@ -30,10 +36,11 @@ function Header() {
             <CloseWraper onClick={() => setBurgerStatus(false)}>
                <CloseBtn />
             </CloseWraper>
-            <li><a href='#'>Model s</a></li>
-            <li><a href='#'>Model 3</a></li>
-            <li><a href='#'>Model X</a></li>
-            <li><a href='#'>Model Y</a></li>
+            {
+               cars && cars.map((car, index) => (
+                  <li key={index}><a href='#'>{car}</a></li>
+               ))
+            }
             <li><a href='#'>Existing Inventory</a></li>
             <li><a href='#'>Used Inventory</a></li>
             <li><a href='#'>Trade-in</a></li>
